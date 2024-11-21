@@ -3,7 +3,7 @@ import Nav from "./ui/Nav";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="min-w-full">
       <Nav />
     </div>
   );

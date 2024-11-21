@@ -55,7 +55,7 @@ body {
 
 @layer nav {
   .nav-container {
-    @apply flex h-[200px] gap-6 cursor-pointer relative transition-all overflow-hidden;
+    @apply flex justify-between items-start h-[200px] gap-4 cursor-pointer relative transition-all overflow-hidden;
   }
   .nav-section {
     @apply w-auto h-[20px] z-10 flex items-center justify-between;

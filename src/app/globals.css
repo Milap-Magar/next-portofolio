@@ -3,19 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background-light: #daf1de;
+  --color-background-dark: #051f20;
+  --color-foreground-light: #051f20;
+  --color-foreground-dark: #daf1de;
+  --font-tmr: "Tomorrow", sans-serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-foreground-light);
+  background: var(--color-background-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+  color: var(--color-foreground-dark);
+  background: var(--color-background-dark);
+}
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply min-h-screen;
+  }
+}
+
+@layer utilities {
+  /* Heading - Typography */
+  .h1 {
+    @apply text-[34px] leading-[42px] font-bold;
+  }
+  .h2 {
+    @apply text-[24px] leading-[36px] font-bold;
+  }
+  .h3 {
+    @apply text-[20px] leading-[28px] font-semibold;
+  }
+  .h4 {
+    @apply text-[18px] leading-[20px] font-medium;
+  }
+  .h5 {
+    @apply text-[16px] leading-[24px] font-semibold;
+  }
+  /* button */
+  .button {
+    @apply text-[14px] leading-[20px] font-medium;
+  }
+}
+
+@layer nav {
+  .nav-container {
+    @apply flex h-auto gap-6 cursor-pointer relative transition-all overflow-hidden;
+  }
+  .nav-section {
+    @apply w-auto h-[20px] z-10 flex items-center justify-between;
+  }
+  .nav-section-item {
+    @apply flex flex-col p-5 relative -top-24 opacity-0 transition-[300ms];
+  }
+  .arrow {
+    @apply relative -right-2 w-[25px] h-[10px] rotate-90 z-10 transition-[300ms];
+  }
 }

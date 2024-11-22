@@ -14,6 +14,9 @@ body {
   color: var(--color-foreground-light);
   background: var(--color-background-light);
   transition: background-color 0.3s, color 0.3s;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 .dark body {

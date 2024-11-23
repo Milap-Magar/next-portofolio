@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { navItems } from "../../../constants";
 import Soicals from "./Soicals";
+import Link from "next/link";
 
 interface NavItems {
   id: string;
@@ -99,14 +100,15 @@ const Nav = () => {
                 {navItems
                   .filter((item) => item.id !== selectedItem?.id)
                   .map((item: NavItems) => (
-                    <li
-                      id={item.id}
-                      key={item.key}
-                      className="p-3 font-normal rounded-2xl dark:hover:bg-green-200 hover:text-[#00FF00] transition-colors cursor-pointer"
-                      onClick={() => handleSelectItem(item)}
-                    >
-                      {item.title}
-                    </li>
+                    <Link href={item.id} key={item.key}>
+                      <li
+                        id={item.id}
+                        className="p-3 font-normal rounded-2xl dark:hover:bg-green-200 hover:text-[#00FF00] transition-colors cursor-pointer"
+                        onClick={() => handleSelectItem(item)}
+                      >
+                        {item.title}
+                      </li>
+                    </Link>
                   ))}
               </ul>
             </div>

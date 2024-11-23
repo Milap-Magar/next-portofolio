@@ -31,3 +31,22 @@ export const socials = [
     icons: "/assets/Icons/github.svg",
   },
 ];
+
+export const MainHeading = [
+  {
+    id: 1,
+    title: "/Introduction",
+  },
+  {
+    id: 2,
+    title: "/Projects",
+  },
+  {
+    id: 3,
+    title: "/About",
+  },
+  {
+    id: 4,
+    title: "/Contact",
+  },
+];

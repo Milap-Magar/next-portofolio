@@ -2,16 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
 :root {
   --color-background-light: #daf1de;
   --color-background-dark: #051f20;
   --color-foreground-light: #051f20;
   --color-foreground-dark: #daf1de;
   --font-tmr: "Tomorrow", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.hide-scrollbar {
+  overflow: scroll;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {

@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col overflow-auto snap-y snap-mandatory">
+      <div className="flex-1 flex flex-col overflow-auto snap-y snap-mandatory hide-scrollbar">
         <Navbar />
         <main className="flex-1 scroll-smooth">{children}</main>
       </div>

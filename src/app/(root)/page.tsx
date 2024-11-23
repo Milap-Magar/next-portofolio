@@ -2,6 +2,7 @@
 
 import { MainHeading, navItems } from "../../../constants";
 import { useState } from "react";
+import { About, Contact, Main, Work } from "../pages";
 
 interface HeadingMap {
   id: number;
@@ -10,27 +11,22 @@ interface HeadingMap {
 
 interface NavProps {
   id: string;
-  title: string;
+  title: string;  
   key: number;
 }
 
 export default function Title() {
-  const [selectedId, setSelectedId] = useState<number>(1);
-
-  const handleSelect = (id: number) => {
-    setSelectedId(id);
-  };
+  // const handleSelect = (id: number) => {
+  //   setSelectedId(id);
+  // };
 
   return (
     <div>
-      <ul className="center">
-        {MainHeading.filter(
-          (heading: HeadingMap) => heading.id === selectedId
-        ).map((heading: HeadingMap) => (
-          <li key={heading.id}>
-            <h1 className="h2">{heading.title}</h1>
-          </li>
-        ))}
+      <ul className="center w-full h-full">
+        <Main />
+        <Work />
+        <About />
+        <Contact />
       </ul>
     </div>
   );

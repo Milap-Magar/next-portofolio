@@ -3,10 +3,9 @@ import React from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex h-full bg-green-50">
+    <div className="flex h-screen bg-green-50 overflow-hidden">
       {/* Sidebar */}
       <div className="relative w-16 flex flex-col items-center">
-        {/* Circle and Line */}
         <div className="absolute top-32">
           {/* Circle */}
           <div className="w-16 h-14 bg-green-500 blur-md rounded-full "></div>
@@ -16,9 +15,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col overflow-auto snap-y snap-mandatory">
         <Navbar />
-        <main className="p-6 flex-1">{children}</main>
+        <main className="flex-1 scroll-smooth">{children}</main>
       </div>
     </div>
   );

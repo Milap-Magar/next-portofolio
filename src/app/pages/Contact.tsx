@@ -1,9 +1,9 @@
-import React from 'react'
-
 const Contact = () => {
   return (
-    <div>Contact</div>
-  )
-}
+    <div className="h-screen flex items-start justify-start pt-36 px-4 snap-start">
+      Contact Content
+    </div>
+  );
+};
 
-export default Contact
+export default Contact;

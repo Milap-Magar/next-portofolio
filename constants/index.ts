@@ -35,7 +35,7 @@ export const socials = [
 export const MainHeading = [
   {
     id: 1,
-    title: "/Introduction",
+    title: "/INTRO",
   },
   {
     id: 2,

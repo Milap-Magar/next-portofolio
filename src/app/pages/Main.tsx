@@ -1,9 +1,9 @@
-import React from 'react'
-
 const Main = () => {
   return (
-    <div>Main</div>
-  )
-}
+    <div className="h-screen flex items-start justify-start pt-36 px-4 snap-start">
+      Main Content
+    </div>
+  );
+};
 
-export default Main
+export default Main;

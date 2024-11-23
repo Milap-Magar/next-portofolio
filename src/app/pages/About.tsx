@@ -1,9 +1,9 @@
-import React from 'react'
-
 const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <div className="h-screen flex items-start justify-start pt-36 px-4 snap-start">
+      About Content
+    </div>
+  );
+};
 
-export default About
+export default About;

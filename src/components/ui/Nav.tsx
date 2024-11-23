@@ -71,7 +71,7 @@ const Nav = () => {
         </button>
         {/* Navigation Section */}
         {isMobile ? (
-          <></>
+          <>{/* FOR MOBILE DEVICES */}</>
         ) : (
           <nav className="nav-section flex gap-2 items-center mt-3">
             <div className="relative">

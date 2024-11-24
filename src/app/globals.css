@@ -52,7 +52,7 @@ body {
 @layer utilities {
   /* Heading - Typography */
   .h1 {
-    @apply text-[34px] leading-[23px] tracking-[14px] font-tomorrow font-semibold;
+    @apply text-green-300 dark:text-[#00FF00] text-[20px] sm:text-[24px] md:text-[34px] leading-[23px] tracking-[14px] font-tomorrow font-semibold;
   }
   .h2 {
     @apply text-[24px] leading-[36px] tracking-widest font-bold;

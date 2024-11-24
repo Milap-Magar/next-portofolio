@@ -60,8 +60,12 @@ Copy code
 🌟 Contributions Welcome!
 Feel free to open issues or submit pull requests. Your feedback helps improve the project and makes it even better for everyone!
 <br/>
-💬 Connect with Me
+💬 Connect with Me:
+<br/>
 📸 Instagram
+<br/>
 💼 LinkedIn
+<br/>
 🌐 Portfolio Website
+<br/>
 💻 Crafted with Next.js | Designed for Excellence!

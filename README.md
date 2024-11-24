@@ -1,4 +1,4 @@
-##🚀 Next.js Portfolio
+# Next.js Portfolio 🚀
 <br/>
 Welcome to my personal portfolio, crafted with love and precision using Next.js! ✨ Explore my skills, projects, and journey as a developer through this sleek and modern interface.
 <br/>

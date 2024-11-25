@@ -4,7 +4,7 @@ const Work = () => {
   return (
     <section
       className="h-screen flex flex-col items-start justify-start pt-36 px-4 snap-start"
-      id="project"
+      id="projects"
     >
       <div className="space-x-2">
         <span className="h1 dark:text-[#00FF00] text-green-700">

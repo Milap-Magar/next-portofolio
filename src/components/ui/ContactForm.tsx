@@ -24,7 +24,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-[250px] sm:w-[300px] md:w-[440px] h-[450px] sm:h-[400px] md:h-[355px] rounded-xl py-2 bg-white dark:bg-black flex flex-col items-center"
+      className="w-[250px] sm:w-[300px] md:w-[470px] h-[450px] sm:h-[400px] md:h-[365px] rounded-xl py-2 bg-white dark:bg-black flex flex-col items-center"
     >
       <div className="px-5 py-1 md:py-2">
         <h1 className="text-black dark:text-white font-semibold text-[20px] tracking-widest">
@@ -35,9 +35,9 @@ const ContactForm = () => {
           website, or bring a unqiue project to life, I'm here to help!!
         </p>
       </div>
-      <div className="p-0 md:p-2 w-[30vh] md:w-[30vw]">
+      <div className="p-0 md:p-2 w-[14em] md:w-[25em]">
         <label className="pb-2 flex flex-col">
-          <span className="">Full Name</span>
+          <span className="font-tomorrow text-base">Full Name</span>
           <input
             type="text"
             name="name"
@@ -48,7 +48,7 @@ const ContactForm = () => {
           />
         </label>
         <label className="pb-2 flex flex-col">
-          <span className="">Email</span>
+          <span className="font-tomorrow text-base">Email</span>
           <input
             type="text"
             name="name"
@@ -59,17 +59,29 @@ const ContactForm = () => {
           />
         </label>
         <label className="pb-2 flex flex-col">
-          <span className="">Full Name</span>
-          <input
-            type="text"
-            name="name"
+          <span className="font-tomorrow text-base">Message</span>
+          <textarea
+            minLength={2}
+            maxLength={200}
+            name="message"
             value={form.value}
             onChange={handleChange}
-            placeholder="johndoe@info.com"
+            placeholder="Say! Hieee"
             className="border border-white rounded-md p-1 bg-transparent"
           />
         </label>
-        <button type="submit" className="px-2 py-1 bg-transparent rounded-md border dark:text-white">Submit</button>
+        <div className="hidden">
+          <label htmlFor="honeyBug">
+            <span>Honey bug</span>
+            <input type="text" name="htrap" id="htrap" />
+          </label>
+        </div>
+        <button
+          type="submit"
+          className="px-2 py-1 bg-transparent rounded-md border dark:text-white"
+        >
+          Submit
+        </button>
       </div>
     </form>
   );

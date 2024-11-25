@@ -1,9 +1,10 @@
 #Next.js Portfolio🚀 <br />
 Welcome to my personal portfolio, crafted with love and precision using Next.js! ✨ Explore my skills, projects, and journey as a developer through this sleek and modern interface.
 <br />
-🌟 Live Preview<br />
-🌐 Visit the Portfolio<br />
-🛠️ Getting Started<br />
+🌟 Live Preview <br />
+🌐 Visit the Portfolio <br />
+🛠️ Getting Started <br />
+
 Follow these steps to get the project up and running on your local machine:
 bash
 Copy code
@@ -52,10 +53,17 @@ Copy code
 ├── 📄 next.config.js // Next.js configuration  
 ├── 📄 package.json // Dependencies and scripts  
 └── 📄 README.md // You’re here!  
+<br />
 🌟 Contributions Welcome!
+<br />
 Feel free to open issues or submit pull requests. Your feedback helps improve the project and makes it even better for everyone!
+<br />
 💬 Connect with Me
+<br />
 📸 Instagram
+<br />
 💼 LinkedIn
+<br />
 🌐 Portfolio Website
-💻 Crafted with Next.js | Designed for Excellence!we
+<br />
+💻 Crafted with Next.js | Designed for Excellence!!

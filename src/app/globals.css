@@ -40,6 +40,26 @@ body {
   background: var(--color-background-dark);
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+.animate-marquee2 {
+  display: flex;
+  animation: marquee 20s linear infinite reverse;
+  will-change: transform;
+}
+
 @layer base {
   * {
     @apply scroll-smooth;

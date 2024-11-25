@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Input from "./Input";
 
 interface FormState {
   name: string;
@@ -9,78 +10,84 @@ interface FormState {
 }
 
 const ContactForm = () => {
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [form, setFrom] = useState<FormState>({
+  const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleChange = () => {};
-  const handleSubmit = () => {};
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Honeypot validation
+    const honeypot =
+      formRef.current?.querySelector<HTMLInputElement>("#honeypot");
+    if (honeypot && honeypot.value) {
+      console.log("Bot detected! Submission ignored.");
+      return;
+    }
+
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      console.log("Form submitted:", form);
+    }, 2000);
+  };
 
   return (
     <form
+      ref={formRef}
       onSubmit={handleSubmit}
-      className="w-[250px] sm:w-[300px] md:w-[470px] h-[450px] sm:h-[400px] md:h-[365px] rounded-xl py-2 bg-white dark:bg-black flex flex-col items-center"
+      className="w-[250px] sm:w-[300px] md:w-[400px] h-[450px] sm:h-[400px] md:h-[375px] rounded-xl bg-white/30 dark:bg-black/30 
+             flex flex-col items-center backdrop-blur-md border border-white/50 shadow-lg"
     >
       <div className="px-5 py-1 md:py-2">
-        <h1 className="text-black dark:text-white font-semibold text-[20px] tracking-widest">
+        <h1 className="text-black dark:text-[#00FF00] font-semibold text-[20px] tracking-widest">
           Let's Talk.
         </h1>
-        <p className=" text-[15px] md:text-[12px] font-light tracking-wider">
-          Weather you're looking to build a new website, improve your exisiting
-          website, or bring a unqiue project to life, I'm here to help!!
+        <p className="text-[15px] md:text-[12px] font-light tracking-wider text-black dark:text-white">
+          Whether you're looking to build a new website, improve your existing
+          website, or bring a unique project to life, I'm here to help!!
         </p>
       </div>
-      <div className="p-0 md:p-2 w-[14em] md:w-[25em]">
-        <label className="pb-2 flex flex-col">
-          <span className="font-tomorrow text-base">Full Name</span>
-          <input
-            type="text"
-            name="name"
-            value={form.value}
-            onChange={handleChange}
-            placeholder="John Doe"
-            className="border border-white rounded-md p-1 bg-transparent w-full"
-          />
+      <div className="p-0 md:p-4 w-[14em] md:w-[25em] space-y-6">
+        <label className="pb-2 flex flex-col w-[12em] sm:w-[15em] md:w-[21em]">
+          <Input type={"text"} name={"Full Name"} id={"name"} />
         </label>
-        <label className="pb-2 flex flex-col">
-          <span className="font-tomorrow text-base">Email</span>
-          <input
-            type="text"
-            name="name"
-            value={form.value}
-            onChange={handleChange}
-            placeholder="johndoe@info.com"
-            className="border border-white rounded-md p-1 bg-transparent"
-          />
+        <label className="pb-2 flex flex-col w-[12em] sm:w-[15em] md:w-[21em]">
+          <Input type={"email"} name={"Email"} id={"email"} />
         </label>
-        <label className="pb-2 flex flex-col">
-          <span className="font-tomorrow text-base">Message</span>
-          <textarea
-            minLength={2}
-            maxLength={200}
-            name="message"
-            value={form.value}
-            onChange={handleChange}
-            placeholder="Say! Hieee"
-            className="border border-white rounded-md p-1 bg-transparent"
-          />
+        <label className="pb-2 flex flex-col w-[12em] sm:w-[15em] md:w-[21em]">
+          <Input type={"textarea"} name={"Message"} id={"message"} />
         </label>
+
+        {/* Honeypot Field */}
         <div className="hidden">
-          <label htmlFor="honeyBug">
-            <span>Honey bug</span>
-            <input type="text" name="htrap" id="htrap" />
+          <label htmlFor="honeypot">
+            Do not fill this field:
+            <input type="text" id="honeypot" name="honeypot" />
           </label>
         </div>
+
         <button
           type="submit"
-          className="px-2 py-1 bg-transparent rounded-md border dark:text-white"
+          disabled={loading}
+          className={`px-2 py-1 bg-transparent rounded-md border dark:border-white border-green-400 text-black dark:text-white hover:bg-white/20 transition-all ${
+            loading ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         >
-          Submit
+          {loading ? "Submitting..." : "Submit"}
         </button>
       </div>
     </form>

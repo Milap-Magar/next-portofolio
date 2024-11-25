@@ -1,8 +1,26 @@
-import Footer from "@/components/Footer";
+"use client";
+
+import Loading from "@/components/Loading";
 import Navbar from "@/components/Navbar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-green-50 dark:bg-green-400">
+        <Loading />
+      </div>
+    );
+  }
   return (
     <div className="flex h-screen bg-green-50 overflow-hidden">
       <div className="relative w-16 flex flex-col items-center">

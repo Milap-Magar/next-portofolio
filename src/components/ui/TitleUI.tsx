@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GithubOutlined, LinkOutlined } from "@ant-design/icons"; // Ant Design Icons
+import { GithubOutlined, LinkOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
 interface TitleProps {

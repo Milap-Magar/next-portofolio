@@ -15,7 +15,7 @@ const Contact = () => {
         {/* Bar section */}
         <span className="h1 dark:text-[#00FF00] text-green-700">
           <ContactsFilled className="dark:text-[#00FF00] text-green-300 pr-8" />
-          /Contact Me
+          /Contact
         </span>
         <div className="hidden w-[23em] h-[15rem] rounded-xl sm:flex md:flex justify-center items-center gap-5">
           <div className="bg-[#00FF00] w-[5px] h-[160px]"></div>

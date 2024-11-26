@@ -8,8 +8,7 @@ const Navbar = () => {
 
   const onNavScroll = () => {
     if (window.scrollY > 30) setNavState(true);
-
-    setNavState(false);
+    else setNavState(false); // Ensure navState is set to false when scrolled back up
   };
 
   useEffect(() => {
@@ -22,11 +21,11 @@ const Navbar = () => {
   return (
     <div className="min-w-full min-h-auto">
       <div
-        className={
+        className={`transition-all duration-300 ${
           !navState
             ? "absolute top-0 left-0 right-0 opacity-100 z-[200] w-full h-[10vh]"
             : "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-90 z-50 blur-effect-theme bg-[#bdbdbd] text-white"
-        }
+        }`}
       >
         <Nav />
       </div>

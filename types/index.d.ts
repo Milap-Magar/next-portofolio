@@ -13,3 +13,13 @@ declare interface InputProps {
   id: string;
   type: string;
 }
+
+declare interface TitleProps {
+  titleName: string;
+  id: number;
+  description: string;
+  sub_description: string;
+  bgColor: string;
+  img: string;
+  link: string;
+}

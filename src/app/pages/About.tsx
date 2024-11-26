@@ -3,7 +3,7 @@ import { InfoCircleFilled } from "@ant-design/icons";
 const About = () => {
   return (
     <div
-      className="h-screen flex items-start justify-start pt-36 px-4 snap-start"
+      className="h-screen flex items-start justify-start pt-32 px-4 snap-start"
       id="about"
     >
       <span className="h1 dark:text-[#00FF00] text-green-700">

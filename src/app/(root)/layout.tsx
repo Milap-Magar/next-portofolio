@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex h-screen bg-green-50 overflow-hidden">
       <div className="relative w-16 flex flex-col items-center">
-        <div className="absolute top-32">
+        <div className="absolute top-20">
           {/* Circle */}
           <div className="w-16 h-14 bg-green-500 blur-md rounded-full "></div>
           {/* Line */}

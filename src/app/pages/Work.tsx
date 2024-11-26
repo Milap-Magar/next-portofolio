@@ -20,7 +20,7 @@ const Work = () => {
 
   return (
     <section
-      className="h-screen flex flex-col items-start justify-start pt-32 px-4 snap-start"
+      className="h-screen flex flex-col items-start justify-start pt-20 md:pt-24 px-4 snap-start"
       id="projects"
     >
       <div className="space-x-2">
@@ -58,7 +58,7 @@ const Work = () => {
           </div>
         </div>
         {/* Navigation Arrows */}
-        <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white">
+        <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white z-10">
           <button
             onClick={handlePrev}
             className="text-xl p-2 rounded-full bg-black bg-opacity-80 hover:bg-opacity-75 transition-all"
@@ -66,7 +66,7 @@ const Work = () => {
             &lt;
           </button>
         </div>
-        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white">
+        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white z-10">
           <button
             onClick={handleNext}
             className="text-xl p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 transition-all"

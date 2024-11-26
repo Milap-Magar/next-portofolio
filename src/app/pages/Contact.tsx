@@ -8,7 +8,7 @@ import ContactFiller from "@/components/ui/ContactFiller";
 const Contact = () => {
   return (
     <section
-      className="space-y-1 md:space-y-6 w-full h-full sm:h-screen md:h-screen md:flex-row flex-col flex items-start justify-start pt-32  px-4 snap-start"
+      className="space-y-1 md:space-y-6 w-full h-full sm:h-screen md:h-screen md:flex-row flex-col flex items-start justify-start pt-24 px-4 snap-start"
       id="contact"
     >
       <div className="md:w-[60vw] w-full flex flex-col gap-5">

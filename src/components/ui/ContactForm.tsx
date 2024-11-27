@@ -37,11 +37,18 @@ const ContactForm = () => {
       return;
     }
 
+    // Simple validation
+    if (!form.name || !form.email || !form.message) {
+      console.log("Please fill out all fields.");
+      return;
+    }
+
     setLoading(true);
 
     setTimeout(() => {
       setLoading(false);
       console.log("Form submitted:", form);
+      alert("Thank you for your message! We'll get back to you soon.");
     }, 2000);
   };
 
@@ -49,8 +56,8 @@ const ContactForm = () => {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="w-[250px] sm:w-[300px] md:w-[400px] h-[450px] sm:h-[400px] md:h-[375px] rounded-xl bg-white/30 dark:bg-black/30 
-             flex flex-col items-center backdrop-blur-md border border-white/50 shadow-lg"
+      className="w-[250px] sm:w-[300px] md:w-[400px] h-[450px] sm:h-[400px] md:h-[375px] rounded-xl dark:bg-black/30 
+             flex flex-col items-center backdrop-blur-md border border-white/50 shadow-lg shadow-[#00FF00] dark:shadow-white/50"
     >
       <div className="px-5 py-1 md:py-2">
         <h1 className="text-black dark:text-[#00FF00] font-semibold text-[20px] tracking-widest">
@@ -63,13 +70,31 @@ const ContactForm = () => {
       </div>
       <div className="p-0 md:p-4 w-[14em] md:w-[25em] space-y-6">
         <label className="pb-2 flex flex-col w-[12em] sm:w-[15em] md:w-[21em]">
-          <Input type={"text"} name={"Full Name"} id={"name"} />
+          <Input
+            type={"text"}
+            name={"name"}
+            id={"name"}
+            value={form.name}
+            onChange={handleChange}
+          />
         </label>
         <label className="pb-2 flex flex-col w-[12em] sm:w-[15em] md:w-[21em]">
-          <Input type={"email"} name={"Email"} id={"email"} />
+          <Input
+            type={"email"}
+            name={"email"}
+            id={"email"}
+            value={form.email}
+            onChange={handleChange}
+          />
         </label>
         <label className="pb-2 flex flex-col w-[12em] sm:w-[15em] md:w-[21em]">
-          <Input type={"textarea"} name={"Message"} id={"message"} />
+          <Input
+            type={"textarea"}
+            name={"message"}
+            id={"message"}
+            value={form.message}
+            onChange={handleChange}
+          />
         </label>
 
         {/* Honeypot Field */}

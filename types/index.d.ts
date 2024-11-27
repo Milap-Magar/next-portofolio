@@ -23,3 +23,9 @@ declare interface TitleProps {
   img: string;
   link: string;
 }
+
+declare interface AccordianProps {
+  title: string;
+  description: string;
+  isCheck: string;
+}

@@ -61,12 +61,18 @@ body {
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none;
 }
 
 .scrollbar-hidden {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
 
 @layer base {

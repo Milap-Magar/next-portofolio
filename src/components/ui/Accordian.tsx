@@ -25,7 +25,7 @@ const Accordian: React.FC<AccordianProps> = ({
   return (
     <div className="w-full">
       <div
-        className="flex justify-between items-center cursor-pointer font-tomorrow font-semibold text-[#00FF00] w-[250px] sm:w-[400xp] md:[490px] lg:w-[500px]"
+        className="flex justify-between items-center cursor-pointer font-tomorrow font-semibold text-green-300 dark:text-[#00FF00] w-[200px] sm:w-[400xp] md:[490px] lg:w-[500px]"
         onClick={() => toggleSection(isCheck)}
       >
         <span>
@@ -38,8 +38,10 @@ const Accordian: React.FC<AccordianProps> = ({
           <DownOutlined className="text-[#00FF00]" />
         )}
       </div>
-      {expandedSection === isCheck && (
-        <p className="mt-4 text-white w-[500px]">{description}</p>
+      {expandedSection !== isCheck && (
+        <p className="mt-4 text-green-300 dark:text-white ps-5 w-[500px]">
+          {description}
+        </p>
       )}
     </div>
   );

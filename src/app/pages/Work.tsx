@@ -2,6 +2,7 @@ import { ProjectFilled } from "@ant-design/icons";
 import TitleUI from "@/components/ui/TitleUI";
 import { projects } from "../../../constants";
 import { useState } from "react";
+import Card from "@/components/ui/Card";
 
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,7 +21,7 @@ const Work = () => {
 
   return (
     <section
-      className="h-screen flex flex-col items-start justify-start pt-20 md:pt-24 px-4 snap-start"
+      className="h-full flex flex-col items-start justify-start pt-20 md:pt-24 px-4 snap-start"
       id="projects"
     >
       <div className="space-x-2">
@@ -29,16 +30,16 @@ const Work = () => {
           /Projects
         </span>
       </div>
-      {/* Main section */}
+
+      {/* Project Carousel Section */}
       <main
-        className="relative w-full mt-3
-                  flex flex-col items-center justify-center p-2 sm:p-4 lg:p-6 
-                  bg-green-200 shadow-green-500 dark:bg-green-950 rounded-3xl shadow-xl overflow-hidden"
+        className="relative h-full md:h-screen w-full mt-3 flex flex-col items-center justify-center p-2 sm:p-4 lg:p-6 
+                  bg-green-100 shadow-green-600 dark:bg-green-950 rounded-3xl shadow-lg overflow-hidden"
       >
         <div
           key={projects[currentIndex].id}
-          className={`relative flex-1 ${projects[currentIndex]} h-screen w-[80vw] pt-28 rounded-lg 
-                      transition-all duration-1000 ease-in-out bg-transparent`}
+          className="relative flex-1 w-[80vw] rounded-lg 
+                  transition-all duration-1000 ease-in-out bg-transparent"
           style={{
             backgroundImage: `url(${projects[currentIndex].img})`,
             backgroundSize: "cover",
@@ -46,8 +47,7 @@ const Work = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
-          {/* Text Content */}
-          <div className="relative z-10 text-white py-2 px-4 bg-green-300 bg-opacity-70 rounded-md">
+          <div className="absolute bottom-0 z-10 text-white py-4 px-16 bg-green-300 bg-opacity-70 rounded-md">
             <TitleUI
               titleName={projects[currentIndex].titleName}
               id={projects[currentIndex].id}
@@ -57,6 +57,7 @@ const Work = () => {
             />
           </div>
         </div>
+
         {/* Navigation Arrows */}
         <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white z-10">
           <button
@@ -75,6 +76,26 @@ const Work = () => {
           </button>
         </div>
       </main>
+
+      {/* Project Cards Section (Visible on larger screens) */}
+      <div className="w-full min-h-screen flex justify-center items-center mt-8 md:mt-0 cursor-pointer">
+        <div className="w-full max-w-screen-xl px-4">
+          <div className="w-full text-green-300 dark:text-[#00FF00] tracking-widest font-tomorrow font-semibold text-[2em] text-center mb-8">
+            <span>List of Works:</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
+            {projects.map(({ id, titleName, link, githubLink, img }) => (
+              <Card
+                key={id}
+                titleName={titleName}
+                link={link}
+                githubLink={githubLink}
+                img={img}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

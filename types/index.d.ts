@@ -29,3 +29,10 @@ declare interface AccordianProps {
   description: string;
   isCheck: string;
 }
+declare interface CardProps {
+  titleName: string;
+  description: string;
+  link: string;
+  githubLink: string;
+  img: string;
+}

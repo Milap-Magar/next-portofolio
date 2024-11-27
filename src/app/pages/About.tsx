@@ -28,8 +28,7 @@ const About = () => {
       </span>
 
       {/* Main Content */}
-      <main className="py-6 max-w-full h-[20em] font-tomorrow font-normal flex flex-col gap-6 overflow-y-scroll mt-5 scrollbar-hidden relative">
-        {/* Education Section */}
+      <main className="py-6 max-w-full h-[20em] md:h-[60em] font-tomorrow font-normal flex flex-col gap-8 md:gap-6 lg:gap-10 overflow-y-scroll mt-5 scrollbar-hidden relative">
         <Accordian
           title="Education"
           description="I am currently pursuing a Bachelor of Computer Applications (BCA) and
@@ -40,12 +39,23 @@ const About = () => {
           and React, along with frameworks like Tailwind CSS and Material UI"
           isCheck="education"
         />
+        <Accordian
+          title="Experience"
+          description="Frontend Intern: At DoerSoft Techonologies. Worked for 6 months in frontned technologies"
+          isCheck="experience"
+        />
+        <Accordian
+          title="Outside of work"
+          description="Outside of work, I &lt;3 playing football & I also play a lot of video
+          games. (Ex: Valorant)"
+          isCheck="work"
+        />
       </main>
 
       {/* Tech Section */}
-      <div className="flex justify-start px-4 py-8 items-end h-screen text-green-400 dark:text-white">
+      <div className="flex justify-start px-4 py-8 items-end h-screen text-green-400 dark:text-white w-full">
         <div className="space-y-4">
-          <span className="h-full">
+          <span className="h-full w-full">
             Here are some technologies I have been working with:
           </span>
           {technologies.slice(0, 3).map((tech, index) => (
@@ -69,13 +79,6 @@ const About = () => {
             </span>
           ))}
         </div>
-      </div>
-
-      <div className="hidden md:block max-xl:block">
-        <p>
-          Outside of work, I &lt;3 playing football & I also play a lot of video
-          games. (Ex: Valorant)
-        </p>
       </div>
     </div>
   );

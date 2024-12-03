@@ -1,7 +1,4 @@
 "use client";
-
-import { MainHeading, navItems } from "../../../constants";
-import { useState } from "react";
 import { About, Contact, Main, Work } from "../pages";
 
 interface HeadingMap {
@@ -16,9 +13,6 @@ interface NavProps {
 }
 
 export default function Title() {
-  // const handleSelect = (id: number) => {
-  //   setSelectedId(id);
-  // };
 
   return (
     <div>

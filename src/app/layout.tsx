@@ -19,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${tomorrow.variable} font-tomorrow antialiased`}>
+      <head>
+        <link rel="icon" href="/favicon.svg" />
+      </head>
+      <body
+        className={`${tomorrow.variable} font-[var(--font-tmr)] antialiased`}
+      >
         {children}
       </body>
     </html>
